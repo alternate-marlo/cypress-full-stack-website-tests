@@ -14,4 +14,4 @@ phases:
 
   build:
     commands:
-      - yarn cy:run
+      - yarn cy:run:ci
