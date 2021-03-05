@@ -17,9 +17,7 @@ phases:
     commands:
       - yarn cy:run:ci
 
-artifacts:
-  base-directory: cypress
-  discard-paths: no
-  files:
-    - 'screenshots/**/*'
-    - 'videos/**/*'
+  post_build:
+    commands:
+      - aws s3 cp --recursive cypress/screenshots s3://results-xp-cypress-demo
+      - aws s3 cp --recursive cypress/videos s3://results-xp-cypress-demo
