@@ -28,5 +28,5 @@ phases:
 
   post_build:
     commands:
-      - aws s3 cp --recursive cypress/screenshots s3://results-xp-cypress-demo/${CODEBUILD_BUILD_ID}
-      - aws s3 cp --recursive cypress/videos s3://results-xp-cypress-demo/${CODEBUILD_BUILD_ID}
+      - aws s3 cp --recursive cypress/screenshots "s3://results-xp-cypress-demo/${CODEBUILD_BUILD_ID}"
+      - aws s3 cp --recursive cypress/videos "s3://results-xp-cypress-demo/${CODEBUILD_BUILD_ID}"
