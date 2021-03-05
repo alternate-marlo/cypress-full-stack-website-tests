@@ -15,3 +15,9 @@ phases:
   build:
     commands:
       - yarn cy:run:ci
+artifacts:
+  base-directory: cypress
+  discard-paths: no
+  files:
+    - 'screenshots/**/*'
+    - 'videos/**/*'
