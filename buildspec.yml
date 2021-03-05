@@ -28,9 +28,5 @@ phases:
 
   post_build:
     commands:
-      - printenv
-      - echo -e s3://results-xp-cypress-demo/$CODEBUILD_BUILD_ID
-      - echo $CODEBUILD_BUILD_ID
-      - echo $NO_COLOR
-      - aws s3 cp --recursive cypress/screenshots $(echo -e s3://results-xp-cypress-demo/$CODEBUILD_BUILD_ID)
-      - aws s3 cp --recursive cypress/videos $(echo -e s3://results-xp-cypress-demo/$CODEBUILD_BUILD_ID)
+      - echo s3://results-xp-cypress-demo/$CODEBUILD_BUILD_ID | aws s3 cp --recursive cypress/screenshots -
+      - echo s3://results-xp-cypress-demo/$CODEBUILD_BUILD_ID | aws s3 cp --recursive cypress/videos -
