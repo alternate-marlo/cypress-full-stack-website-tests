@@ -13,8 +13,10 @@ phases:
       - yarn install --frozen-lockfile
 
   build:
+    on-failure: CONTINUE
     commands:
       - yarn cy:run:ci
+
 artifacts:
   base-directory: cypress
   discard-paths: no
