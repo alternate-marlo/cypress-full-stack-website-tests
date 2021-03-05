@@ -1,0 +1,17 @@
+version: 0.2
+
+env:
+  variables:
+    # Disable terminal colour.
+    # https://docs.cypress.io/guides/references/changelog.html#3-0-0
+    NO_COLOR: 1
+    TERM: 'xterm-mono'
+
+phases:
+  install:
+    commands:
+      - yarn install --frozen-lockfile
+
+  build:
+    commands:
+      - yarn cy:run
