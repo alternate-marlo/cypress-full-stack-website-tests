@@ -28,6 +28,5 @@ phases:
 
   post_build:
     commands:
-      - export TARGET_PATH=$(echo "s3://results-xp-cypress-demo/${CODEBUILD_BUILD_ID}")
-      - aws s3 cp --recursive cypress/screenshots "${TARGET_PATH}"
-      - aws s3 cp --recursive cypress/videos "${TARGET_PATH}"
+      - aws s3 cp ./cypress/screenshots s3://results-xp-cypress-demo/${CODEBUILD_BUILD_ID}" --recursive
+      - aws s3 cp ./cypress/videos s3://results-xp-cypress-demo/${CODEBUILD_BUILD_ID} --recursive
