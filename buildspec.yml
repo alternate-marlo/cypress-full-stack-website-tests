@@ -12,6 +12,15 @@ phases:
     commands:
       - yarn install --frozen-lockfile
 
+  pre_build:
+    commands:
+      # https://blog.joshwalsh.me/aws-gatsby/ 
+      #
+      # - echo "Invalidating CloudFront cache"
+      # - | 
+      #   aws cloudfront wait invalidation-completed --distribution-id $CLOUDFRONT_DISTRIBUTION \
+      #   --id $(aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION --paths "/*" | tr '\n' ' ' | sed -r 's/.*"Id": "([^"]*)".*$/\1/')
+
   build:
     on-failure: CONTINUE
     commands:
