@@ -1,1 +1,9 @@
-{}
+{
+  "reporter": "cypress-qase-reporter",
+  "reporterOptions": {
+      "apiToken": "200b9714dc1dae3e1cf337837b7a454b6b1049b7",
+      "projectCode": "DEMO",
+      "runId": 1,
+      "logging": true
+  }
+}
