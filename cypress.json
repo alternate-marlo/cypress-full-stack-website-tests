@@ -1,9 +1,15 @@
 {
-  "reporter": "cypress-qase-reporter",
+  "reporter": "cypress-multi-reporters",
   "reporterOptions": {
+    "reporterEnabled": "cypress-mochawesome-reporter, cypress-qase-reporter",
+    "cypressMochawesomeReporterReporterOptions": {
+      "charts": true
+    },
+    "cypressQaseReporterReporterOptions": {
       "apiToken": "200b9714dc1dae3e1cf337837b7a454b6b1049b7",
       "projectCode": "DEMO",
-      "runId": 1,
       "logging": true
-  }
+    }
+  },
+  "video": true
 }
