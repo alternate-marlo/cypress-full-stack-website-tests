@@ -10,7 +10,7 @@ describe('Gatsby blog', () => {
   qase(
     1,
     it('loads home page', () => {
-      cy.get('main > div > h1');
+      cy.get('main > div > h2');
     })
   );
 
