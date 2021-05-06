@@ -30,5 +30,5 @@ phases:
     commands:
       # Make them if they don't exist yet
       - mkdir -p ./cypress/screenshots && mkdir -p ./cypress/videos
-      - aws s3 cp ./cypress/screenshots s3://results-xp-cypress-demo/${CODEBUILD_BUILD_ID} --recursive
-      - aws s3 cp ./cypress/videos s3://results-xp-cypress-demo/${CODEBUILD_BUILD_ID} --recursive
+      - aws s3 cp ./cypress/screenshots s3://${CYPRESS_TEST_RESULTS_BUCKET}/${CODEBUILD_BUILD_ID} --recursive
+      - aws s3 cp ./cypress/videos s3://${CYPRESS_TEST_RESULTS_BUCKET}/${CODEBUILD_BUILD_ID} --recursive
