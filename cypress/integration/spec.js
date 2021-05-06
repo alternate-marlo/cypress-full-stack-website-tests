@@ -6,7 +6,7 @@ describe('Gatsby blog', () => {
   });
 
   it('loads home page', () => {
-    cy.get('main > div > h2');
+    cy.get('main > div > h1');
   });
 
   it('navigates to second page and back', () => {
